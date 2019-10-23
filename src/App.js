@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logoWat.png';
 import './App.css';
 import Clock from './Clock/Clock.js';
-//import Button from './Button/Button.js';
+import Login from './Login.js';
 
 
 class App extends Component
@@ -13,11 +13,9 @@ class App extends Component
       <div className="App">
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo"/>
-      <h1 className="App-title">Salut cest cool</h1>
+      <h1 className="App-title">Welcome !</h1>
+      <Login className="App-form"/>
       </header>
-      <Clock date={new Date()}/>
-      <button>Start</button>
-      <button>Stop</button>
       </div>
       );
   }
