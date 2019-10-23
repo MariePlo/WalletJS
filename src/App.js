@@ -12,14 +12,20 @@ class App extends Component
   {
     return(
       <Router>
+      <nav className="AppNav">
+      
+      	<div className="SignupBox"><Link to={"/SignUp"}>Sign up</Link></div>
+      	<div className="LoginBox"><Link to={"/Login"}>Login</Link></div>
+      
+      </nav>
       <div className="App">
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo"/>
-      <h1 className="App-title">Welcome !</h1>
-      <Login className="App-form"/>
-      <Link to={"/SignUp"}>Sign up</Link>
+      
+      
       <Switch>
         <Route path='/SignUp' component={SignUp}/>
+        <Route path='/Login' component={Login}/>
         
       </Switch>
       </header>

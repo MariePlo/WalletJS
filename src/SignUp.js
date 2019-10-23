@@ -13,9 +13,7 @@ class SignUp extends Component
     return(
       <div className="App">
       <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo"/>
       <SignUpForm className="App-form"/>
-      <Link to={'/App'}>Home</Link>
       </header>
       </div>
       );
