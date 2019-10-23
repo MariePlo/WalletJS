@@ -17,7 +17,7 @@ class App extends Component
       <img src={logo} className="App-logo" alt="logo"/>
       <h1 className="App-title">Welcome !</h1>
       <Login className="App-form"/>
-      <Link to={"/SignUp"}>Sign up</Link>
+      <Link to={"/SignUp"}>Sign up here</Link>
       <Switch>
         <Route path='/SignUp' component={SignUp}/>
         
