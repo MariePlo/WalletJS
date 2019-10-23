@@ -52,3 +52,19 @@
   text-decoration: underline;
   color: white;
 }
+
+.AppNav{
+  background-color: #00468b;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.LoginBox{
+  background-color: #004690;
+  padding: 8px;
+}
+
+.SignupBox{
+  background-color: #00467b;
+  padding: 8px;
+}
