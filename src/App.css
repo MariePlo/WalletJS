@@ -46,3 +46,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.sign{
+  font-size: 0.7em;
+  text-decoration: underline;
+  color: white;
+}
