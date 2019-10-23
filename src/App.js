@@ -4,6 +4,7 @@ import logo from './logoWat.png';
 import './App.css';
 import Login from './Login.js';
 import SignUpForm from './SignUpForm.js';
+import Home from './Home.js';
 
 
 class App extends Component
@@ -20,12 +21,14 @@ class App extends Component
       </nav>
       <div className="App">
       <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo"/>
+      
       
       
       <Switch>
+
         <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
+        <Route path='/' component={Home}/>
         
       </Switch>
       </header>

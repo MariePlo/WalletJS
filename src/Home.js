@@ -3,7 +3,7 @@ import {Link, Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 import logo from './logoWat.png';
 import './App.css';
 import App from './App.js';
-
+import SignUpForm from './SignUpForm.js';
 
 
 class SignUp extends Component
@@ -13,7 +13,7 @@ class SignUp extends Component
     return(
       <div className="App">
       <header className="App-header">
-      <SignUpForm className="App-form"/>
+      <img src={logo} className="App-logo" alt="logo"/>
       </header>
       </div>
       );
