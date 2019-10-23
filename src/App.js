@@ -3,7 +3,7 @@ import {Link, Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 import logo from './logoWat.png';
 import './App.css';
 import Login from './Login.js';
-import SignUp from './SignUp.js';
+import SignUpForm from './SignUpForm.js';
 
 
 class App extends Component
@@ -14,7 +14,7 @@ class App extends Component
       <Router>
       <nav className="AppNav">
       
-      	<div className="SignupBox"><Link to={"/SignUp"}>Sign up</Link></div>
+      	<div className="SignupBox"><Link to={"/SignUpForm"}>Sign up</Link></div>
       	<div className="LoginBox"><Link to={"/Login"}>Login</Link></div>
       
       </nav>
@@ -24,7 +24,7 @@ class App extends Component
       
       
       <Switch>
-        <Route path='/SignUp' component={SignUp}/>
+        <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
         
       </Switch>
