@@ -30,7 +30,6 @@ class App extends Component
         <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
         <Route path='/' component={Home}/>
-        <Route path='/Accueil' component={Accueil}/>
         
       </Switch>
       </header>
