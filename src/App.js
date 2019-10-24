@@ -15,6 +15,10 @@ this.logState = logState;
 	
 }
 
+
+var LogedIn = true;
+
+
 const utilisateur = new user(true);
 
 class App extends Component
@@ -40,10 +44,10 @@ class App extends Component
         <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
 
-        if (utilisateur.logState = false){
+        if (LogedIn != 'true'){
         	<Route path='/' component={Home}/>
         }
-        if (utilisateur.logState = true){
+        if (LogedIn == 'true'){
         	<Route path='/' component={Accueil}/>
         }
         
