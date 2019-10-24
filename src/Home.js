@@ -6,7 +6,7 @@ import App from './App.js';
 import SignUpForm from './SignUpForm.js';
 
 
-class SignUp extends Component
+class Home extends Component
 {
   render()
   {
@@ -20,4 +20,4 @@ class SignUp extends Component
       );
   }
 }
- export default SignUp;
+ export default Home;

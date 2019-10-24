@@ -4,6 +4,7 @@ import logo from './logoWat.png';
 import './App.css';
 import Login from './Login.js';
 import SignUpForm from './SignUpForm.js';
+import Accueil from './Accueil.js';
 import Home from './Home.js';
 
 
@@ -29,6 +30,7 @@ class App extends Component
         <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
         <Route path='/' component={Home}/>
+        <Route path='/Accueil' component={Accueil}/>
         
       </Switch>
       </header>

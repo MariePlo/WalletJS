@@ -9,14 +9,18 @@ class Login extends Component
 
 	render()
 	{
-
 		return(
+			<Router>
 
 			<form onsubmit="<Router><Switch><Route path='/Accueil' component={Accueil}/></Switch></Router>">
 				<label className="element-form">Email Address : <input type="mail" required/></label>
 				<label className="element-form">Password : <input type="password" required/></label>
 				<Link to={"/Accueil"}> <button type="submit">Login</button> </Link>
 			</form>
+			<Switch>
+			 <Route path='/Accueil' component={Accueil}/>
+			</Switch>
+			</Router>
 		);
 	}
 }
