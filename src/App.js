@@ -7,9 +7,19 @@ import SignUpForm from './SignUpForm.js';
 import Accueil from './Accueil.js';
 import Home from './Home.js';
 
+class user extends Component{
+	constructor(logState){
+super(logState);
+this.logState = logState;
+		}
+	
+}
+
+const utilisateur = new user(true);
 
 class App extends Component
 {
+
   render()
   {
     return(
@@ -29,7 +39,16 @@ class App extends Component
 
         <Route path='/SignUpForm' component={SignUpForm}/>
         <Route path='/Login' component={Login}/>
-        <Route path='/' component={Home}/>
+
+        if (utilisateur.logState = false){
+        	<Route path='/' component={Home}/>
+        }
+        if (utilisateur.logState = true){
+        	<Route path='/' component={Accueil}/>
+        }
+        
+        
+
         
       </Switch>
       </header>
