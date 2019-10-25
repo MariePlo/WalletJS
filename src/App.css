@@ -80,3 +80,13 @@
   font-size: 70px;
   color: pink;
 }
+
+.HomeBox{
+  background-color: #0046B0;
+  padding: 8px;
+}
+
+.CartesBox{
+  background-color: #004670;
+  padding: 8px;
+}
