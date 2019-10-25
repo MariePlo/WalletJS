@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {Button} from 'react';
 import Accueil from './Accueil.js';
-import {Link, Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 
 class Login extends Component 
 {
-		
 
 	render()
 	{

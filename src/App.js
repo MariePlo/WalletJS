@@ -10,12 +10,27 @@ import Home from './Home.js';
 
 class App extends Component
 {
+  b = () =>{
+    console.log("local//users:\n");
+    for(var i = 0; i<localStorage.length; i++)
+    {
+      console.log(i + " " + localStorage.getItem(localStorage.key(i)) + "\n");
+    }
+
+    console.log("session//status:\n");
+
+    for(var u = 0; u<sessionStorage.length; u++)
+    {
+      console.log(u + " " + sessionStorage.getItem(sessionStorage.key(u)) + "\n");
+    }
+  }
 
   render()
-  {
+  { 
 
-      if(localStorage.getItem("state") == '1')
+      if(sessionStorage.getItem("state") === '1')
       {
+        this.b();
         return(
           <Accueil/>
           );
@@ -24,7 +39,9 @@ class App extends Component
 
       else
       {
+        this.b();
         return(
+
       <header className="App-header">
       <div className="App">
       <img src={logo} className="App-logo" alt="logo"/>
