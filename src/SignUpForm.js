@@ -12,21 +12,9 @@ class SignUpForm extends Component
 		this.password=password;
 	}
 
-	function ok = () =>
+	handleChange(event)
 	{
-		document.getElementById('button').addEventListener('click', saving());
-	}
-
-	function saving = () =>
-	{
-		console.log("hello");
-		var fname = document.getElementById('in_fname');
-		var lname = document.getElementById('in_lname');
-		var mail = document.getElementById('mail');
-		var password = document.getElementById('password');
-		var user = new SignUpForm(fname, lname, mail, password);
-		var i = localStorage + 1;
-		localStorage.setItem(i, JSON.stringify(user));
+		localStorage.setItem([event.target.name], event.target.value);
 		sessionStorage.removeItem("state");
 		sessionStorage.setItem("state", '1');
 	}
@@ -35,12 +23,12 @@ class SignUpForm extends Component
 	{
 		console.log("yo");
 		return(
-			<form>
-				<label className="element-form">First Name : <input id='in_fname' type="text" required/></label>
-				<label className="element-form">Last Name : <input id='in_lname' type="text" required/></label>
-				<label className="element-form">Email Address : <input id='in_mail' type="mail" required/></label>
-				<label className="element-form">Password : <input id='in_password' type="password" required/></label>
-				<button type="submit" onClick={ok()}>Sign up</button>
+			<form id="my_form">
+				<label className="element-form">First Name : <input type="text" name="fname" onChange={this.handleChange} required/></label>
+				<label className="element-form">Last Name : <input type="text" name="lname" onChange={this.handleChange} required/></label>
+				<label className="element-form">Email Address : <input type="mail" name="mail" onChange={this.handleChange} required/></label>
+				<label className="element-form">Password : <input type="password" name="password" onChange={this.handleChange} required/></label>
+				<button type="submit">Sign up</button>
 			</form>
 		);
 	}
