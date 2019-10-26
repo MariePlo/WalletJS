@@ -21,7 +21,6 @@ class SignUpForm extends Component
 
 	render()
 	{
-		console.log("yo");
 		return(
 			<form id="my_form">
 				<label className="element-form">First Name : <input type="text" name="fname" onChange={this.handleChange} required/></label>
