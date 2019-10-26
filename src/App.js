@@ -1,9 +1,13 @@
 import React, { Component} from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import logo from './logoWat.png';
 import './App.css';
 import Login from './Login.js';
 import SignUpForm from './SignUpForm.js';
 import Accueil from './Accueil.js';
+import Home from './Home.js';
+import AccBalance from './AccBalance.js';
+
 
 
 
@@ -32,7 +36,22 @@ class App extends Component
       {
         this.b();
         return(
-          <Accueil/>
+          <BrowserRouter>
+          <nav className="AppNav">
+        <div className="HomeBox"> <Link to="/"> Home </Link> </div>
+          
+        <div className="CartesBox" > <Link to="/Cartes">My cards</Link> </div>
+        
+        <div className="LogOutBox"> <Link to="/AccBalance">Account Balance</Link></div>
+            
+        <div className="LogOutBox"> <Link to="/Accueil">Log Out</Link></div>
+        </nav>
+ <Route exact path="/" component={Home} />
+ <Route path="/Accueil" component={Accueil} />
+ <Route path="/AccBalance" component={AccBalance} />
+ <Route path="/Accueil" component={Accueil} />
+ </BrowserRouter>
+
           );
       }
 
