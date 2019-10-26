@@ -7,12 +7,20 @@ import SignUpForm from './SignUpForm.js';
 import Accueil from './Accueil.js';
 import Home from './Home.js';
 import AccBalance from './AccBalance.js';
+import LogOut from './LogOut.js';
 
 
 
 
 class App extends Component
 {
+
+  LogOut = () => 
+  {
+   
+    sessionStorage.clear();
+    window.location.reload();
+  }
 
   b = () =>{
     console.log("local//users:\n");
@@ -44,16 +52,17 @@ class App extends Component
         
         <div className="LogOutBox"> <Link to="/AccBalance">Account Balance</Link></div>
             
-        <div className="LogOutBox"> <Link to="/Accueil">Log Out</Link></div>
+        <button className="LogOutBox" onClick={this.LogOut}> Log Out </button>
         </nav>
  <Route exact path="/" component={Home} />
  <Route path="/Accueil" component={Accueil} />
  <Route path="/AccBalance" component={AccBalance} />
- <Route path="/Accueil" component={Accueil} />
+
  </BrowserRouter>
 
           );
       }
+
 
 
       else
