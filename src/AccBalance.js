@@ -10,29 +10,48 @@ class AccBalance extends Component
     add_balance = (value) =>
     {
       var val;
-        val = sessionStorage.getItem("accountBalance");
-        val += value;
-        sessionStorage.setItem("accountBalance",val);
-    }
+      if(localStorage.getItem("acountBalance") != "null"){
+        val = localStorage.getItem("accountBalance");
+      }
+      else{
+        val=0;
+      }
+      alert(value+",premier "+val);
+        val = Number(value) + Number(val);
+        //console.log(Number(value)+",deuxieme "+Number(val));
+        localStorage.removeItem("accountBalance");
+        localStorage.setItem("accountBalance",val);
+    
+  }
 
 
   current_balance = () =>
   {
-    sessionStorage.setItem("accountBalance","120");
     return(
-      <p>your current balnce is {sessionStorage.getItem("accountBalance")}</p>
+      <p>your current balance is {localStorage.getItem("accountBalance")}</p>
     );
   }
 
+  handleChange = (event) =>
+	{https://codepen.io/gaearon/pen/VmmPgp?editors=0010
+    this.add_balance(event.target.value);
+    
+	}
+
   render()
   {
+    
     return(
+     
       <div className="App">
       <header className="App-header">
       
       <p className="titre"> Account Balance </p>
       <p>{this.current_balance()}</p>
-        <input type="number" name="balChange" ></input>
+      <form id="my_form">
+				<label className="element-form">amount <input type="number" name="add_amout" onChange={this.handleChange} required/></label>
+				<button type="submit">Add</button>
+			</form>
 
       </header>
       </div>
