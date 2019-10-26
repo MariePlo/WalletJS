@@ -50,9 +50,9 @@ class App extends Component
           
         <div className="CartesBox" > <Link to="/Cartes">My cards</Link> </div>
         
-        <div className="LogOutBox"> <Link to="/AccBalance">Account Balance</Link></div>
+        <div className="HomeBox"> <Link to="/AccBalance">Account Balance</Link></div>
             
-        <button className="LogOutBox" onClick={this.LogOut}> Log Out </button>
+        <button className="CartesBox" onClick={this.LogOut}> Log Out </button>
         </nav>
  <Route exact path="/" component={Home} />
  <Route path="/Accueil" component={Accueil} />
