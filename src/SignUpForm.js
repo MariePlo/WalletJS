@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Button} from 'react';
-import Accueil from './Accueil.js'
 
 class SignUpForm extends Component 
 {
@@ -14,28 +12,38 @@ class SignUpForm extends Component
 		this.password=password;
 	}
 
-	saving = (fname, lname, mail, password) =>
+	function ok = () =>
 	{
-		alert("allo");
-		const user = new SignUpForm(fname, lname, mail, password);
-		localStorage.setItem("user", JSON.stringify(user));
+		document.getElementById('button').addEventListener('click', saving());
+	}
+
+	function saving = () =>
+	{
+		console.log("hello");
+		var fname = document.getElementById('in_fname');
+		var lname = document.getElementById('in_lname');
+		var mail = document.getElementById('mail');
+		var password = document.getElementById('password');
+		var user = new SignUpForm(fname, lname, mail, password);
+		var i = localStorage + 1;
+		localStorage.setItem(i, JSON.stringify(user));
 		sessionStorage.removeItem("state");
 		sessionStorage.setItem("state", '1');
 	}
 
-
 	render()
 	{
+		console.log("yo");
 		return(
-			<form onSubmit={this.saving('m', 'p', '@', 'r')}>
-				<label className="element-form">First Name : <input type="text" id="in_fname" required/></label>
-				<label className="element-form">Last Name : <input type="text" id="in_lname" required/></label>
-				<label className="element-form">Email Address : <input type="mail" id="in_mail" required/></label>
-				<label className="element-form">Password : <input type="password" id="in_password" required/></label>
-				<button type="submit">Sign up</button>
+			<form>
+				<label className="element-form">First Name : <input id='in_fname' type="text" required/></label>
+				<label className="element-form">Last Name : <input id='in_lname' type="text" required/></label>
+				<label className="element-form">Email Address : <input id='in_mail' type="mail" required/></label>
+				<label className="element-form">Password : <input id='in_password' type="password" required/></label>
+				<button type="submit" onClick={ok()}>Sign up</button>
 			</form>
 		);
 	}
 }
-
 export default SignUpForm;
+

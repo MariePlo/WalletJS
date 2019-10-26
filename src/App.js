@@ -4,12 +4,12 @@ import './App.css';
 import Login from './Login.js';
 import SignUpForm from './SignUpForm.js';
 import Accueil from './Accueil.js';
-import Home from './Home.js';
 
 
 
 class App extends Component
 {
+
   b = () =>{
     console.log("local//users:\n");
     for(var i = 0; i<localStorage.length; i++)
