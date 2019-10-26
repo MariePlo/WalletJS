@@ -8,6 +8,7 @@ import Accueil from './Accueil.js';
 import Home from './Home.js';
 import AccBalance from './AccBalance.js';
 import LogOut from './LogOut.js';
+import Cards from './Cards.js';
 
 
 
@@ -48,7 +49,7 @@ class App extends Component
           <nav className="AppNav">
         <div className="HomeBox"> <Link to="/"> Home </Link> </div>
           
-        <div className="CartesBox" > <Link to="/Cartes">My cards</Link> </div>
+        <div className="CartesBox" > <Link to="/Cards">My cards</Link> </div>
         
         <div className="HomeBox"> <Link to="/AccBalance">Account Balance</Link></div>
             
@@ -57,6 +58,7 @@ class App extends Component
  <Route exact path="/" component={Home} />
  <Route path="/Accueil" component={Accueil} />
  <Route path="/AccBalance" component={AccBalance} />
+ <Route path="/Cards" component={Cards} />
 
  </BrowserRouter>
 
