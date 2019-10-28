@@ -8,6 +8,7 @@ import Accueil from './Accueil.js';
 import Home from './Home.js';
 import AccBalance from './AccBalance.js';
 import Cards from './Cards.js';
+import Transfer from './Transfer.js';
 
 
 
@@ -51,6 +52,8 @@ class App extends Component
         <div className="CartesBox" > <Link to="/Cards">My cards</Link> </div>
         
         <div className="HomeBox"> <Link to="/AccBalance">Account Balance</Link></div>
+
+        <div className="HomeBox"> <Link to="/Transfer">Transfer</Link></div>
             
         <button className="LogOutBox" onClick={this.LogOut}> Log Out </button>
         </nav>
@@ -58,6 +61,7 @@ class App extends Component
  <Route path="/Accueil" component={Accueil} />
  <Route path="/AccBalance" component={AccBalance} />
  <Route path="/Cards" component={Cards} />
+ <Route path="/Transfer" component={Transfer} />
 
  </BrowserRouter>
 

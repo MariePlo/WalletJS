@@ -19,11 +19,11 @@ class AccBalance extends Component
       var val = 0;
       var currentAccountBalance = "acountBalance"+sessionStorage.getItem("mail");
       if(localStorage.getItem(currentAccountBalance) ==! "NULL"){
-        alert("if");
+        
         val = Number(localStorage.getItem(currentAccountBalance)) + 0;
       }
       else{
-        alert("else");
+        
         val=0;
       }
       localStorage.setItem(currentAccountBalance,val);
