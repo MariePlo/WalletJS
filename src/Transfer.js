@@ -41,7 +41,6 @@ class Transfer extends Component
       var val_d = Number(localStorage.getItem(transferDestiation)) + Number(value);
       console.log("vart:"+val_t);
       console.log("vard:"+val_d);
-      alert("pause");
       if (val_t > 0)
       {
         localStorage.removeItem(currentAccountBalance);
@@ -52,7 +51,7 @@ class Transfer extends Component
 
       }
       else{
-        alert("tu es trop pauvre dsl");
+        alert("you're too poor sooorrrryyyyyy");
       }
       
     
