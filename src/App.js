@@ -7,7 +7,6 @@ import SignUpForm from './SignUpForm.js';
 import Accueil from './Accueil.js';
 import Home from './Home.js';
 import AccBalance from './AccBalance.js';
-import LogOut from './LogOut.js';
 import Cards from './Cards.js';
 
 
@@ -19,7 +18,7 @@ class App extends Component
   LogOut = () => 
   {
    
-    sessionStorage.clear();
+    sessionStorage.removeItem("state");
     window.location.reload();
   }
 
