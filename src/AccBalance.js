@@ -7,6 +7,14 @@ import App from './App.js';
 
 class AccBalance extends Component
 {   
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+  
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     add_balance = (value) =>
     {
       var val;
@@ -16,8 +24,25 @@ class AccBalance extends Component
       else{
         val=0;
       }
-      alert(value+",premier "+val);
+      
         val = Number(value) + Number(val);
+        //console.log(Number(value)+",deuxieme "+Number(val));
+        localStorage.removeItem("accountBalance");
+        localStorage.setItem("accountBalance",val);
+    
+  }
+
+  sub_balance = (value) =>
+    {
+      var val;
+      if(localStorage.getItem("acountBalance") != "null"){
+        val = localStorage.getItem("accountBalance");
+      }
+      else{
+        val=0;
+      }
+      
+        val = Number(val) - Number(value);
         //console.log(Number(value)+",deuxieme "+Number(val));
         localStorage.removeItem("accountBalance");
         localStorage.setItem("accountBalance",val);
@@ -33,10 +58,19 @@ class AccBalance extends Component
   }
 
   handleChange = (event) =>
-	{https://codepen.io/gaearon/pen/VmmPgp?editors=0010
-    this.add_balance(event.target.value);
+	{
+    this.setState({value: event.target.value});
     
-	}
+  }
+  
+  handleSubmit() {
+    this.add_balance(this.state.value);
+    
+  }
+  handleSubmit2() {
+    this.sub_balance(this.state.value);
+    
+  }
 
   render()
   {
@@ -48,10 +82,12 @@ class AccBalance extends Component
       
       <p className="titre"> Account Balance </p>
       <p>{this.current_balance()}</p>
-      <form id="my_form">
+      <form id="my_form" >
 				<label className="element-form">amount <input type="number" name="add_amout" onChange={this.handleChange} required/></label>
-				<button type="submit">Add</button>
+				<button onClick={this.handleSubmit.bind(this)}>Add</button>
+        <button onClick={this.handleSubmit2.bind(this)}>sub</button>
 			</form>
+      
 
       </header>
       </div>
