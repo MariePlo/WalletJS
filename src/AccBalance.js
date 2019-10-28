@@ -15,11 +15,26 @@ class AccBalance extends Component
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    update_balance(){
+      var val = 0;
+      var currentAccountBalance = "acountBalance"+sessionStorage.getItem("mail");
+      if(localStorage.getItem(currentAccountBalance) ==! "NULL"){
+        alert("if");
+        val = Number(localStorage.getItem(currentAccountBalance)) + 0;
+      }
+      else{
+        alert("else");
+        val=0;
+      }
+      localStorage.setItem(currentAccountBalance,val);
+    }
+
     add_balance = (value) =>
     {
+      var currentAccountBalance = "acountBalance"+localStorage.getItem("mail");
       var val;
-      if(localStorage.getItem("acountBalance") != "null"){
-        val = localStorage.getItem("accountBalance");
+      if(localStorage.getItem(currentAccountBalance) != "null"){
+        val = localStorage.getItem(currentAccountBalance);
       }
       else{
         val=0;
@@ -27,16 +42,17 @@ class AccBalance extends Component
       
         val = Number(value) + Number(val);
         //console.log(Number(value)+",deuxieme "+Number(val));
-        localStorage.removeItem("accountBalance");
-        localStorage.setItem("accountBalance",val);
+        localStorage.removeItem(currentAccountBalance);
+        localStorage.setItem(currentAccountBalance,val);
     
   }
 
   sub_balance = (value) =>
     {
       var val;
-      if(localStorage.getItem("acountBalance") != "null"){
-        val = localStorage.getItem("accountBalance");
+      var currentAccountBalance = "acountBalance"+localStorage.getItem("mail");
+      if(localStorage.getItem(currentAccountBalance) != "null"){
+        val = localStorage.getItem(currentAccountBalance);
       }
       else{
         val=0;
@@ -44,16 +60,17 @@ class AccBalance extends Component
       
         val = Number(val) - Number(value);
         //console.log(Number(value)+",deuxieme "+Number(val));
-        localStorage.removeItem("accountBalance");
-        localStorage.setItem("accountBalance",val);
+        localStorage.removeItem(currentAccountBalance);
+        localStorage.setItem(currentAccountBalance,val);
     
   }
 
 
   current_balance = () =>
   {
+    var currentAccountBalance = "acountBalance"+localStorage.getItem("mail");
     return(
-      <p>your current balance is {localStorage.getItem("accountBalance")}</p>
+      <p>your current balance is {localStorage.getItem(currentAccountBalance)}</p>
     );
   }
 
@@ -74,6 +91,8 @@ class AccBalance extends Component
 
   render()
   {
+    this.update_balance();
+    
     
     return(
      
@@ -84,8 +103,8 @@ class AccBalance extends Component
       <p>{this.current_balance()}</p>
       <form id="my_form" >
 				<label className="element-form">amount <input type="number" name="add_amout" onChange={this.handleChange} required/></label>
-				<button onClick={this.handleSubmit.bind(this)}>Add</button>
-        <button onClick={this.handleSubmit2.bind(this)}>sub</button>
+				<button onClick={this.handleSubmit.bind(this)}>Deposit</button>
+        <button onClick={this.handleSubmit2.bind(this)}>Witdraw</button>
 			</form>
       
 
